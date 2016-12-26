@@ -1,0 +1,18 @@
+<ion-view view-title="Settings">
+  <ion-content>
+
+	<div class="list list-inset">
+	  <label class="item item-input">
+	    <input type="text" placeholder="IP Address (e.g., 192.168.1.99)" ng-model="ipAddress.value">
+	  </label>
+	  <label class="item item-input">
+	    <input type="text" placeholder="Port (e.g., 8001)" ng-model="ipAddress.portNo">
+	  </label>
+
+	  <button class="button button-block button-positive" ng-click="updateIp()">
+	  	Update
+	  </button>
+	</div>
+	    
+  </ion-content>
+</ion-view>
