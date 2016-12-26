@@ -32,12 +32,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
     controller: 'AppCtrl'
   })
 
-  .state('app.playlists', {
+  .state('app.lights', {
     url: '/lights',
     views: {
       'menuContent': {
         templateUrl: 'templates/lights.html',
         controller: 'LightsCtrl'
+      }
+    }
+  })
+
+  .state('app.settings', {
+    url: '/settings',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/settings.html',
+        controller: 'SettingsCtrl'
       }
     }
   });
