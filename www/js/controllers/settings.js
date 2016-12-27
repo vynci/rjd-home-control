@@ -1,7 +1,10 @@
-app.controller('SettingsCtrl', function($scope, socket, $window, $rootScope, $ionicPopup) {
+app.controller('SettingsCtrl', function($scope, socket, $window, $rootScope, $ionicPopup, $state) {
+
+	console.log($state);
+
 	$scope.ipAddress = {
 		value : '',
-		portNo:''
+		portNo: ''
 	};
 
 	$scope.$on("$ionicView.enter", function(event, data){
@@ -19,11 +22,13 @@ app.controller('SettingsCtrl', function($scope, socket, $window, $rootScope, $io
 	}
 
 	socket.on('connect', function () {
-		var alertPopup = $ionicPopup.alert({
-	     title: 'Status',
-	     template: 'Connection to server is up!'
-	   });
-		
-	$rootScope.rpiStatus = true;  
+		console.log('connect');
+		if ($state.current.name === 'app.settings') {
+			var alertPopup = $ionicPopup.alert({
+		     title: 'Status',
+	    	 template: 'Connection to server is up!'
+		   });
+		}
+		$rootScope.rpiStatus = true;  
 	});
 })
