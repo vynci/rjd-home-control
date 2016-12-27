@@ -11,98 +11,14 @@
       </button>
     </div>
 
-    <div class="card">
-      <div class="item item-divider">
-        Bed Room
+    <div class="card" ng-repeat="device in devices | orderBy:'seqNum'" ng-show="device.switchNum">
+      <div class="item item-divider" ng-class="changeIndicator(device.state)">
+        {{device.name}}
       </div>
       <div class="item item-text-wrap">
         <div class="button-bar">
-          <a class="button button-balanced" ng-click="execute('3,on')">On</a>
-          <a class="button button-assertive" ng-click="execute('3,off')">Off</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="item item-divider">
-        Octagon 1
-      </div>
-      <div class="item item-text-wrap">
-        <div class="button-bar">
-          <a class="button button-balanced" ng-click="execute('4,on')">On</a>
-          <a class="button button-assertive" ng-click="execute('4,off')">Off</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="item item-divider">
-        Octagon 2
-      </div>
-      <div class="item item-text-wrap">
-        <div class="button-bar">
-          <a class="button button-balanced" ng-click="execute('8,on')">On</a>
-          <a class="button button-assertive" ng-click="execute('8,off')">Off</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="item item-divider">
-        Stairs
-      </div>
-      <div class="item item-text-wrap">
-        <div class="button-bar">
-          <a class="button button-balanced" ng-click="execute('5,on')">On</a>
-          <a class="button button-assertive" ng-click="execute('5,off')">Off</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="item item-divider">
-        OutNorth
-      </div>
-      <div class="item item-text-wrap">
-        <div class="button-bar">
-          <a class="button button-balanced" ng-click="execute('2,on')">On</a>
-          <a class="button button-assertive" ng-click="execute('2,off')">Off</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="item item-divider">
-        OutEast
-      </div>
-      <div class="item item-text-wrap">
-        <div class="button-bar">
-          <a class="button button-balanced" ng-click="execute('6,on')">On</a>
-          <a class="button button-assertive" ng-click="execute('6,off')">Off</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="item item-divider">
-        OutWest
-      </div>
-      <div class="item item-text-wrap">
-        <div class="button-bar">
-          <a class="button button-balanced" ng-click="execute('7,on')">On</a>
-          <a class="button button-assertive" ng-click="execute('7,off')">Off</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="item item-divider">
-        Unused
-      </div>
-      <div class="item item-text-wrap">
-        <div class="button-bar">
-          <a class="button button-balanced" ng-click="execute('1,on')">On</a>
-          <a class="button button-assertive" ng-click="execute('1,off')">Off</a>
+          <a class="button button-balanced" ng-click="execute('{{device.switchNum}},on')">On</a>
+          <a class="button button-assertive" ng-click="execute('{{device.switchNum}},off')">Off</a>
         </div>
       </div>
     </div>

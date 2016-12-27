@@ -1,1 +1,9 @@
 /* Empty. Add your own CSS if you like */
+.custom-item-divider.item-divider {
+  background-color: #a1cd33;
+  color: white;
+}
+.custom-item-divider.item.activated {
+  background-color: #a1cd33;
+  opacity: 0.8;
+}
